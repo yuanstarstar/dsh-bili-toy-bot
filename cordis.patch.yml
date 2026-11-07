@@ -1,0 +1,5 @@
+- insert:
+    - id: bili-toy-bot
+      name: '@local/dsh-bili-toy-bot'
+      config:
+        enabled: false
