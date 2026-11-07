@@ -2,7 +2,7 @@
  * selftest.mjs —— 假 ctx 跑一遍本插件的 apply、全部工具与设置页用的 HTTP 路由
  * 运行：
  *   $env:ELECTRON_RUN_AS_NODE='1'
- *   Start-Process '<DSH 安装目录>\\DSH Desktop.exe' -ArgumentList '"…\selftest.mjs"' -NoNewWindow -Wait
+ *   Start-Process '<DSH 安装目录>\DSH Desktop.exe' -ArgumentList '"…\selftest.mjs"' -NoNewWindow -Wait
  * 结果：同目录 selftest-out.json
  */
 import { writeFileSync, mkdtempSync } from 'node:fs'

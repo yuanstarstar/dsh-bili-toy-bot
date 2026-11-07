@@ -171,7 +171,7 @@ bot_stop                                      # 随时停
 - M4：`createBroadcaster().say()` 的 session 分支实测写入 `user/message`（`source.kind='plugin'`），无会话时自动退回 `feed`。
 - M5：`client.js` 用最小 React 桩跑过：`settings.section` 注册成功（id `bili-toy-bot`，order 33，label「玩toy机器人」），样式注入 1 次。
 - `selftest.mjs`（0.4.2，临时家目录 + 假 agents）：20 个工具全注册，`toolsOk/routesOk/planOk/playNowOk/handoffOk/commentDraftOk/feedOk/sessionsOk/personaSaved/voiceSaved/atPolicySaved/bindOk/activated/httpOk/httpSessionsOk` 全 true，`errors: []`；`atPolicySaved` 断言 `atEnabled===true`、`atMaxPerDay===2`、`atTargets[0]` 是「主人 / 3546830222657967」。
-- 0.4.2 另外验过（`D:\\plugins\\.tmp\botcheck\check5.mjs`）：`buildPlayPrompt` 在「开了 @ 且有名单」时输出 `主人(3546830222657967)、大肥鱼打游戏(3546707958696755)` + 「第一个是主人」+「名单外的人一律不许 @」，关闭或无名单时输出「不要 @ 任何人」；`makeDraft()` 的 `atName/atUid` 指向**主人**而不是 toy 作者。
+- 0.4.2 另外验过（`D:\plugins\.tmp\botcheck\check5.mjs`）：`buildPlayPrompt` 在「开了 @ 且有名单」时输出 `主人(3546830222657967)、大肥鱼打游戏(3546707958696755)` + 「第一个是主人」+「名单外的人一律不许 @」，关闭或无名单时输出「不要 @ 任何人」；`makeDraft()` 的 `atName/atUid` 指向**主人**而不是 toy 作者。
 - 0.4.2 设置页离线渲染（展开函数组件后 166 节点）：同一组「评论与 @」里依次出现「是否评论 / 是否 @ 人 / 每天最多 @ / 可以 @ 的人」，两个复选框都在，且没有「@ 作者」。`parseTargets()` 把「名字,mid」逐行转成 `[{name,uid}]`。
 - 0.4.1 另外验过：`buildPlayPrompt` 三种分支（真发 + @ / 真发不 @ / dryRun 只写草稿）文案正确，含「玩完之后再评价」、不含「每 2~3 分钟用 bot_say」；`allowedByFilters` 对白名单作者放行、非白名单返回「作者不在白名单」。
 - 之前 `ECONNRESET`、`spawn EPERM` 全是 `workspace-write` 沙箱造成的假象，`danger-full-access` 下 CDP 全链路可用。
